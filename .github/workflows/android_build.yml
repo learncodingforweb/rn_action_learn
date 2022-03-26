@@ -11,13 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
       - name: installing dependencies
-      - run: yarn install
+        run: yarn install
       
       - name: prepare for android build
-      - run: cd android && chmod +x ./gradlew
+        run: cd android && chmod +x ./gradlew
       
       - name: build android app
-      - run: cd android && ./gradlew bundleRelease --no-daemon
+        run: cd android && ./gradlew bundleRelease --no-daemon
       
       
