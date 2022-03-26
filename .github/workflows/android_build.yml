@@ -21,4 +21,9 @@ jobs:
       - name: build android app
         run: cd android && ./gradlew assembleRelease --no-daemon
       
+      - name: release app
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-release.apk
+          path: android/app/build/outputs/apk/release
       
